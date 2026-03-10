@@ -34,7 +34,8 @@ class MainPage(BasePage):
     def scroll_to_questions(self, index):
         self.wait_for_element_visible(self.questions[index])
         element = self.find_the_element(self.questions[index])
-        self.scroll_to(element) 
+        self.scroll_to(element)
+        self.wait_for_element_clickable(self.questions[index]) 
 
     @allure.step('Клик по вопросу')
     def click_questions(self, index):
@@ -60,7 +61,12 @@ class MainPage(BasePage):
     def choose_order_button(self, order_button):
         if order_button == "main":
             element = self.find_the_element(mp.main_order_button)
-            self.scroll_to(element)           
+            self.scroll_to(element) 
+            self.wait_for_element_clickable(mp.main_order_button)          
             self.click_element(mp.main_order_button)
         elif order_button == "base":
             self.click_base_order_button()
+
+    @allure.step('Закрыть окно куки')
+    def close_cookie(self):
+        self.click_element(bp.cookie_button)

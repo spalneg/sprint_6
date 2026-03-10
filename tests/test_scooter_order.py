@@ -16,6 +16,7 @@ class TestScooterOrder:
         order_page = OrderPage(driver)
         main_page.open_main_page()
         main_page.choose_order_button(order_button)
+        main_page.close_cookie()
         order_page.wait_order_page_loading()
         order_page.order_scooter(name, surname, address, metro, phone, date, duration)
         assert 'Заказ оформлен' in order_page.get_order_status(), "Произошла ошибка при оформлении заказа"

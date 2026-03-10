@@ -6,3 +6,4 @@ class BasePageLocators:
     logo_button = [By.CLASS_NAME, 'Header_LogoScooter__3lsAR']
     yandex_button = [By.CLASS_NAME, 'Header_LogoYandex__3TSOI']
     dzen_locator = [By.XPATH, '//a[@aria-label="Логотип Бренда"]']
+    cookie_button = [By.CLASS_NAME, 'App_CookieButton__3cvqF']
